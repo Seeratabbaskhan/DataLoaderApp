@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightgrey_color"
+    tools:context=".activities.MainActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_color"
+        android:minHeight="@dimen/_120sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_back_press_id"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/_12sdp"
+            android:src="@drawable/icon_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_search_id"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_36sdp"
+            android:background="@drawable/shape_et_bg"
+            android:drawableStart="@drawable/icon_search"
+            android:drawablePadding="@dimen/_9sdp"
+            android:hint="@string/search_vehicles"
+            android:paddingStart="@dimen/_7sdp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_back_press_id"
+            app:layout_constraintEnd_toStartOf="@+id/iv_view_id"
+            app:layout_constraintStart_toEndOf="@+id/iv_back_press_id"
+            app:layout_constraintTop_toTopOf="@+id/iv_back_press_id" />
+
+        <ImageView
+            android:id="@+id/iv_view_id"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/_12sdp"
+            android:src="@drawable/icon_view"
+            app:layout_constraintBottom_toBottomOf="@id/iv_menu_id"
+            app:layout_constraintEnd_toStartOf="@id/iv_menu_id"
+            app:layout_constraintTop_toTopOf="@id/iv_menu_id" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginVertical="@dimen/_7sdp"
+            android:background="@color/lightwhite"
+            app:layout_constraintBottom_toBottomOf="@id/iv_menu_id"
+            app:layout_constraintEnd_toStartOf="@id/iv_menu_id"
+            app:layout_constraintTop_toTopOf="@id/iv_menu_id" />
+
+        <ImageView
+            android:id="@+id/iv_menu_id"
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/_12sdp"
+            android:src="@drawable/icon_hamburger"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_options_id"
+        android:layout_width="match_parent"
+        app:cardBackgroundColor="@color/white"
+        android:layout_height="@dimen/_41sdp"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_minus14sdp"
+        android:elevation="2dp"
+        android:minHeight="@dimen/_41sdp"
+        app:cardCornerRadius="@dimen/_4sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_top_layout">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/arrow_1"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/arrow_down"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/price"
+                android:textColor="@color/gray_dark"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@id/arrow_1"
+                app:layout_constraintStart_toEndOf="@id/arrow_1"
+                app:layout_constraintTop_toTopOf="@id/arrow_1" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="@dimen/_7sdp"
+                android:background="@color/gray_dark"
+                app:layout_constraintBottom_toBottomOf="@id/guildeline_25"
+                app:layout_constraintStart_toStartOf="@id/guildeline_25"
+                app:layout_constraintTop_toTopOf="@id/guildeline_25" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guildeline_25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.25" />
+
+
+            <ImageView
+                android:id="@+id/arrow_2"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/arrow_down"
+                app:layout_constraintBottom_toBottomOf="@id/arrow_1"
+                app:layout_constraintStart_toStartOf="@id/guildeline_25"
+                app:layout_constraintTop_toTopOf="@id/arrow_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/year"
+                android:textColor="@color/gray_dark"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@id/arrow_2"
+                app:layout_constraintStart_toEndOf="@id/arrow_2"
+                app:layout_constraintTop_toTopOf="@id/arrow_2" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="@dimen/_7sdp"
+                android:background="@color/gray_dark"
+                app:layout_constraintBottom_toBottomOf="@id/guildeline_50"
+                app:layout_constraintStart_toStartOf="@id/guildeline_50"
+                app:layout_constraintTop_toTopOf="@id/guildeline_50" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guildeline_50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.50" />
+
+            <ImageView
+                android:id="@+id/arrow_3"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:src="@drawable/arrow_down"
+                app:layout_constraintBottom_toBottomOf="@id/arrow_1"
+                app:layout_constraintStart_toStartOf="@id/guildeline_50"
+                app:layout_constraintTop_toTopOf="@id/arrow_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/ending"
+                android:textColor="@color/gray_dark"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@id/arrow_3"
+                app:layout_constraintStart_toEndOf="@id/arrow_3"
+                app:layout_constraintTop_toTopOf="@id/arrow_3" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="@dimen/_7sdp"
+                android:background="@color/gray_dark"
+                app:layout_constraintBottom_toBottomOf="@id/guildeline_75"
+                app:layout_constraintStart_toStartOf="@id/guildeline_75"
+                app:layout_constraintTop_toTopOf="@id/guildeline_75" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guildeline_75"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.75" />
+
+            <ImageView
+                android:id="@+id/arrow_4"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:rotation="180"
+                android:src="@drawable/arrow_down"
+                app:layout_constraintBottom_toBottomOf="@id/arrow_1"
+                app:layout_constraintStart_toStartOf="@id/guildeline_75"
+                app:layout_constraintTop_toTopOf="@id/arrow_1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/bids"
+                android:textColor="@color/gray_dark"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@id/arrow_4"
+                app:layout_constraintStart_toEndOf="@id/arrow_4"
+                app:layout_constraintTop_toTopOf="@id/arrow_4" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_car_list_id"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="@dimen/_9sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/cv_options_id"
+        tools:listitem="@layout/item_car" />
+
+
+    <ProgressBar
+        android:id="@+id/progressId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_41sdp"
+        android:layout_marginHorizontal="@dimen/_16sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
+        android:elevation="@dimen/_5sdp"
+        app:cardBackgroundColor="@color/black"
+        android:minHeight="@dimen/_41sdp"
+        app:cardCornerRadius="@dimen/_25sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_1"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:src="@drawable/icon_hamer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/my_bids"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@id/image_1"
+                app:layout_constraintStart_toEndOf="@id/image_1"
+                app:layout_constraintTop_toTopOf="@id/image_1" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="@dimen/_7sdp"
+                android:background="@color/lightwhite"
+                app:layout_constraintBottom_toBottomOf="@id/guildeline_33"
+                app:layout_constraintStart_toStartOf="@id/guildeline_33"
+                app:layout_constraintTop_toTopOf="@id/guildeline_33" />
+
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guildeline_33"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="122dp" />
+
+
+            <ImageView
+                android:id="@+id/image_2"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:src="@drawable/icon_filter"
+                app:layout_constraintBottom_toBottomOf="@id/image_1"
+                app:layout_constraintStart_toStartOf="@id/guildeline_33"
+                app:layout_constraintTop_toTopOf="@id/image_1"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/filter_by"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@id/image_2"
+                app:layout_constraintStart_toEndOf="@id/image_2"
+                app:layout_constraintTop_toTopOf="@id/image_2" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="@dimen/_7sdp"
+                android:background="@color/lightwhite"
+                app:layout_constraintBottom_toBottomOf="@id/guildeline_66"
+                app:layout_constraintStart_toStartOf="@id/guildeline_66"
+                app:layout_constraintTop_toTopOf="@id/guildeline_66" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guildeline_66"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.66" />
+
+            <ImageView
+                android:id="@+id/image_3"
+                android:layout_width="@dimen/_15sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:src="@drawable/icon_mapview"
+                app:layout_constraintBottom_toBottomOf="@id/image_1"
+                app:layout_constraintStart_toStartOf="@id/guildeline_66"
+                app:layout_constraintTop_toTopOf="@id/image_1"
+                app:tint="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:text="@string/map_view"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10sdp"
+                app:layout_constraintBottom_toBottomOf="@id/image_3"
+                app:layout_constraintStart_toEndOf="@id/image_3"
+                app:layout_constraintTop_toTopOf="@id/image_3" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

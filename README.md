@@ -13,7 +13,6 @@ Implementation Details
 Designing Details
 1- No extra Views are created for loading efficiency.
 2- Constraintlayout with guidelines are used where required.
-Brief description of the project and its purpose.
 
 ## Implementation Details
 
