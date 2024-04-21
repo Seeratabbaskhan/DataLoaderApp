@@ -5,5 +5,8 @@
         <item name="colorPrimary">@color/red_color</item>
     </style>
 
-    <style name="Theme.DataLoaderApp" parent="Base.Theme.DataLoaderApp" />
+    <style name="Theme.DataLoaderApp" parent="Base.Theme.DataLoaderApp" >
+        <item name="android:fontFamily">@font/font</item>
+
+    </style>
 </resources>

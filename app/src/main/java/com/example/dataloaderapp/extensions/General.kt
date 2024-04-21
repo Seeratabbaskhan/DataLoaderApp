@@ -30,9 +30,9 @@ fun Long.formatTime(): String {
     val minutes = ((this % (24 * 3600)) % 3600) / 60
 
     return if (days > 0) {
-        String.format("%d d : %02d h : %02d m", days, hours, minutes)
+        String.format("%dd : %02dh : %02dm", days, hours, minutes)
     } else {
-        String.format("0 d : %02d h : %02d m", hours, minutes)
+        String.format("0d : %02dh : %02dm", hours, minutes)
     }
 }
 

@@ -10,10 +10,10 @@
     <string name="map_view">Map View</string>
     <string name="staticnumber"># 470739</string>
     <string name="lv_mercedez">LV Mercedez</string>
-    <string name="aed_600">AED 600</string>
+    <string name="aed_600">AED 103,600</string>
     <string name="_21">21</string>
     <string name="static_time">1d: 5h: 3m</string>
-    <string name="removed">removed</string>
-    <string name="added">added</string>
+    <string name="removed">favourite removed</string>
+    <string name="added">favourite added</string>
     <string name="carsdatabase_db">carsdatabase.db</string>
 </resources>

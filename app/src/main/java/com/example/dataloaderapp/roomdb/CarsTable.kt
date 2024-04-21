@@ -15,7 +15,8 @@ data class CarsTable(
     val currencyEn: String,
     val currencyAr: String,
     val currentPrice: Int,
-    val priority: Int
+    val priority: Int,
+    val favourite: Int
 )
 
 

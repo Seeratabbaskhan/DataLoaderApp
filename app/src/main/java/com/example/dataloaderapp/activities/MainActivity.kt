@@ -15,6 +15,7 @@ import com.example.dataloaderapp.adapters.CarsMainAdapter
 import com.example.dataloaderapp.extensions.MainModel
 import com.example.dataloaderapp.extensions.isRTL
 import com.example.dataloaderapp.extensions.showToast
+import com.example.dataloaderapp.roomdb.CarRepository
 import com.example.dataloaderapp.roomdb.CarsTable
 import com.example.dataloaderapp.viewmodels.CarViewModel
 import com.google.gson.Gson
@@ -75,8 +76,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun setupClickListner() {
-        binding.ivBackPressId.setOnClickListener(this)
-        binding.ivMenuId.setOnClickListener(this)
+        binding.apply {
+            ivBackPressId.setOnClickListener(this@MainActivity)
+            ivMenuId.setOnClickListener(this@MainActivity)
+        }
+
     }
 
     private fun setupEditTextListener() {
@@ -93,8 +97,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun setupRecycleAdapter() {
-        carsMainAdapter = CarsMainAdapter(this@MainActivity)
-        binding.rvCarListId.adapter = carsMainAdapter
+        carsMainAdapter = CarsMainAdapter(this@MainActivity) { carId, oppositeFavourite ->
+            carViewModel.updateFavorite(carId,oppositeFavourite)
+        }.apply {
+            binding.rvCarListId.adapter = this
+        }
+
     }
 
     private fun fetchObserver() {
@@ -129,7 +137,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                         car.auctionInfo.currencyEn ?: "",
                         car.auctionInfo.currencyAr ?: "",
                         car.auctionInfo.currentPrice ?: 0,
-                        car.auctionInfo.priority ?: 0
+                        car.auctionInfo.priority ?: 0,
+                        0
                     )
                 }
 
@@ -162,11 +171,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             View.LAYOUT_DIRECTION_RTL
         }
         setLayoutDirection(newLayoutDirection)
-
-        val updatedLayoutDirection = binding.rvCarListId.layoutDirection
-        Log.d("LayoutDirection", "Updated Layout Direction: $updatedLayoutDirection")
-
-        // Notify adapter about the layout direction change
         carsMainAdapter?.notifyDataSetChanged()
     }
 

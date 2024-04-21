@@ -22,4 +22,10 @@ class CarRepository @Inject() constructor(private val carDao: CarsDao) {
     fun getAllCars(): LiveData<List<CarsTable>> {
         return carDao.getAllCars()
     }
+
+    suspend fun updateFavorite(carId: Int, favorite: Int) {
+        withContext(Dispatchers.IO) {
+            carDao.updateFavourite(carId, favorite)
+        }
+    }
 }

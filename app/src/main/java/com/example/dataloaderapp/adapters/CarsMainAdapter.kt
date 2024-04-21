@@ -16,8 +16,10 @@ import com.example.dataloaderapp.extensions.isRTL
 import com.example.dataloaderapp.extensions.showToast
 import com.example.dataloaderapp.roomdb.CarsTable
 
-class CarsMainAdapter(private val appCompatActivity: AppCompatActivity) :
-    RecyclerView.Adapter<CarsMainAdapter.CarViewHolder>() , Filterable {
+class CarsMainAdapter(
+    private val appCompatActivity: AppCompatActivity,
+    private val onItemClick: (Int, Int) -> Unit
+) : RecyclerView.Adapter<CarsMainAdapter.CarViewHolder>(), Filterable {
 
     private var carsList = mutableListOf<CarsTable>()
     private var exampleListFull = mutableListOf<CarsTable>()
@@ -103,30 +105,32 @@ class CarsMainAdapter(private val appCompatActivity: AppCompatActivity) :
             Glide.with(appCompatActivity).load(imageUrl).into(img_car)
             endingTime.text = model.endTimeInSec.formatTime()
 
+            favImage.setImageResource(if (model.favourite == 1) R.drawable.icon_heart_hollow else R.drawable.icon_heart_filled)
+
+
             if (itemView.isRTL()) {
                 carBrandName.text = model.titleAr
                 carAmount.text = "${model.currencyAr} ${model.currentPrice}"
-            }else{
+            } else {
                 carBrandName.text = model.titleEn
                 carAmount.text = "${model.currencyEn} ${model.currentPrice}"
             }
 
 
             favImage.setOnClickListener {
-                val currentResID = favImage.tag as? Int
-                if (currentResID == R.drawable.icon_heart_filled ) {
+                val favourite = model.favourite as? Int
+                if (favourite != 1) {
                     favImage.setImageResource(R.drawable.icon_heart_hollow)
-                    favImage.tag = R.drawable.icon_heart_hollow
                     appCompatActivity.showToast(
                         appCompatActivity.getString(R.string.removed)
                     )
-                }else{
+                } else {
                     favImage.setImageResource(R.drawable.icon_heart_filled)
-                    favImage.tag = R.drawable.icon_heart_filled
                     appCompatActivity.showToast(
                         appCompatActivity.getString(R.string.added)
                     )
                 }
+                onItemClick(model.carID, if (model.favourite == 0) 1 else 0)
             }
 
         }

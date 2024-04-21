@@ -2,7 +2,6 @@ package com.example.dataloaderapp.viewmodels
 
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.dataloaderapp.roomdb.CarRepository
@@ -22,6 +21,12 @@ class CarViewModel @Inject constructor(private val repository: CarRepository) : 
     fun insertCarsIfNotExists(cars: List<CarsTable>) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.insertCarsIfNotExists(cars)
+        }
+    }
+
+    fun updateFavorite(carId: Int, favorite: Int) {
+        viewModelScope.launch {
+            repository.updateFavorite(carId, favorite)
         }
     }
 }

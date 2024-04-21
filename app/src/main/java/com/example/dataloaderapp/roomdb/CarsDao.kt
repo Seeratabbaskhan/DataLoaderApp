@@ -15,4 +15,8 @@ interface CarsDao {
 
     @Query("SELECT * FROM cars")
     fun getAllCars(): LiveData<List<CarsTable>>
+
+    @Query("UPDATE cars SET favourite = :favourite WHERE carID = :carID")
+    fun updateFavourite(carID: Int, favourite: Int) : Int
+
 }
