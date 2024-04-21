@@ -31,6 +31,9 @@ Designing Details
 
 Attached is a video file named `Screen_recording_20240421_195156.mp4` located in the root folder of the project.
 
+[![Video Demo](http://img.youtube.com/vi/DeUBuCHuDQU/0.jpg)](https://www.youtube.com/shorts/DeUBuCHuDQU)
+
+
 ---
 
 With this README, developers can quickly understand the technologies used in the project and its design principles. The attached video provides visual insight into the project's functionality.

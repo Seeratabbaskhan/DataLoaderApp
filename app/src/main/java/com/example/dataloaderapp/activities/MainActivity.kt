@@ -25,7 +25,7 @@ import java.io.IOException
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
-    
+
     private lateinit var binding: ActivityMainBinding
     private val carViewModel: CarViewModel by viewModels()
     private var backPressCounter = 0
